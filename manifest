@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0
+apiversion: 2
+description: Adwhirl module for ad delivery via Vpon and Admob
+author: Kevin
+license: NA
+copyright: OH!COOL CO., LTD.© VideOhya Inc.
+
+
+# these should not be edited
+name: adwhirlvpon
+moduleid: videohya.adwhirlvpon
+guid: ba210464-ebde-4c11-94ab-056cae1b2305
+platform: iphone
+minsdk: 2.1.4.GA
