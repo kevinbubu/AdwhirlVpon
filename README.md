@@ -34,7 +34,7 @@ Step 1. 註冊相關帳號與id
 	3. Admob帳號註冊 (若只想投放Vpon廣告可跳過此段)
 		2-1. 前往Admob後台註冊帳號 (http://zhtw.admob.com/)
 		2-2. 註冊完成後可在"新增網站/應用程式"內新增一個應用程式
-		2-3. 記下app id，並填入Vpon Adwhirl後台 "AdOn_TW"的AppId欄位裡 ，再設定投放百分比
+		2-3. 記下app id，並填入Vpon Adwhirl後台 "Admob"的AppId欄位裡 ，再設定投放百分比
 			
 			
 Step 2. 模組安裝
