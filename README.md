@@ -41,7 +41,7 @@ Step 1. 註冊相關帳號與id
 Step 2. 模組安裝
 ======================
 	
-	1. 先把videohya.adwhirlvpon-iphone-1.0.zip解壓縮，
+	1. 先把videohya.adwhirlvpon-iphone-1.1.zip解壓縮，
 	
 	2. 把videohya.adwhirlvpon資料夾複製到/Users/<USER NAME>/Library/Application Support/Titanium/modules/iphone中即可
 
