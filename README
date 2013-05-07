@@ -1,5 +1,5 @@
-# Adwhirl vpon/admob Titanium Module
-v1.0
+# Adwhirl Vpon/Admob/InMobi Titanium Module
+v1.1
 
 ============================================
 DESCRIPTION
@@ -13,6 +13,7 @@ AdWhirl是一套廣告輪播平台，開發者如果想在App中放入不同家�
 	1. Vpon廣告
 	2. Admob廣告
 	3. Google AdSense廣告(請直接在Admob後台設定)
+	4. InMobi
 	
 ============================================
 USAGE
