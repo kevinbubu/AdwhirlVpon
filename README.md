@@ -1,22 +1,29 @@
 # Adwhirl Vpon/Admob/InMobi Titanium Module
-v1.1
+v1.2
 
 ============================================
-DESCRIPTION
+描述
 ============================================
 
-AdWhirl是一套廣告輪播平台，開發者如果想在App中放入不同家的廣告平台，可以透過AdWhirl的後台依自己的需求來設定廣告投放的比例。
+* AdWhirl是一套廣告輪播平台，開發者如果想在App中放入不同家的廣告平台，可以透過AdWhirl的後台依自己的需求來設定廣告投放的比例。
 
-目前本模組只支援iOS, Android模組正在開發當中。
+* 目前本模組只支援iOS, Android模組正在開發當中。
 
-本模組支援以下廣告平台：
-	1. Vpon廣告
-	2. Admob廣告
-	3. Google AdSense廣告(請直接在Admob後台設定)
-	4. InMobi
+* 本模組支援以下廣告平台：
+	1. Vpon (SDK 3.2.9)
+	* Admob (SDK 6.4.1)
+	* Google AdSense (請直接在Admob後台設定)
+	* InMobi (SDK 3.7.0)
+	
+
+============================================
+更新內容
+============================================
+	1.Admob SDK 升級至 6.4.1
+	* InMobi SDK 升級至 3.7.0
 	
 ============================================
-USAGE
+安裝方法
 ============================================
 
 Step 1. 註冊相關帳號與id
@@ -35,13 +42,13 @@ Step 1. 註冊相關帳號與id
 	3. Admob帳號註冊 (若只想投放Vpon廣告可跳過此段)
 		2-1. 前往Admob後台註冊帳號 (http://zhtw.admob.com/)
 		2-2. 註冊完成後可在"新增網站/應用程式"內新增一個應用程式
-		2-3. 記下app id，並填入Vpon Adwhirl後台 "Admob"的AppId欄位裡 ，再設定投放百分比
+		2-3. 記下app id，並填入Vpon Adwhirl後台 "AdOn_TW"的AppId欄位裡 ，再設定投放百分比
 			
 			
 Step 2. 模組安裝
 ======================
 	
-	1. 先把videohya.adwhirlvpon-iphone-1.1.zip解壓縮，
+	1. 先把videohya.adwhirlvpon-iphone-1.2.zip解壓縮，
 	
 	2. 把videohya.adwhirlvpon資料夾複製到/Users/<USER NAME>/Library/Application Support/Titanium/modules/iphone中即可
 
@@ -72,3 +79,8 @@ Step 3. 程式設定
 		
 		win.open();
 
+============================================
+作者
+============================================
+
+Kevin Huang.

@@ -34,15 +34,15 @@
 		2C63E97417389F3F002521A7 /* AdWhirlAdapterInMobi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E97217389F3F002521A7 /* AdWhirlAdapterInMobi.m */; };
 		2C63E98A17389FCD002521A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E98917389FCD002521A7 /* PassKit.framework */; };
 		2C63E98C17389FD7002521A7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E98B17389FD7002521A7 /* AVFoundation.framework */; };
-		2C63E99D1738A114002521A7 /* IMAdDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9941738A114002521A7 /* IMAdDelegate.h */; };
-		2C63E99E1738A114002521A7 /* IMAdError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9951738A114002521A7 /* IMAdError.h */; };
-		2C63E99F1738A114002521A7 /* IMAdInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9961738A114002521A7 /* IMAdInterstitial.h */; };
-		2C63E9A01738A114002521A7 /* IMAdInterstitialDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9971738A114002521A7 /* IMAdInterstitialDelegate.h */; };
-		2C63E9A11738A114002521A7 /* IMAdRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9981738A114002521A7 /* IMAdRequest.h */; };
-		2C63E9A21738A114002521A7 /* IMAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E9991738A114002521A7 /* IMAdView.h */; };
-		2C63E9A31738A114002521A7 /* IMCommonUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E99A1738A114002521A7 /* IMCommonUtil.h */; };
-		2C63E9A41738A114002521A7 /* libInMobiAdNetwork-3.6.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E99B1738A114002521A7 /* libInMobiAdNetwork-3.6.0.a */; };
-		2C63E9A51738A114002521A7 /* libInMobiCommons-3.6.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E99C1738A114002521A7 /* libInMobiCommons-3.6.0.a */; };
+		2C96C0DD173A18F300908D0A /* IMAdDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D4173A18F300908D0A /* IMAdDelegate.h */; };
+		2C96C0DE173A18F300908D0A /* IMAdError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D5173A18F300908D0A /* IMAdError.h */; };
+		2C96C0DF173A18F300908D0A /* IMAdInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D6173A18F300908D0A /* IMAdInterstitial.h */; };
+		2C96C0E0173A18F300908D0A /* IMAdInterstitialDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D7173A18F300908D0A /* IMAdInterstitialDelegate.h */; };
+		2C96C0E1173A18F300908D0A /* IMAdRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D8173A18F300908D0A /* IMAdRequest.h */; };
+		2C96C0E2173A18F300908D0A /* IMAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D9173A18F300908D0A /* IMAdView.h */; };
+		2C96C0E3173A18F300908D0A /* IMCommonUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0DA173A18F300908D0A /* IMCommonUtil.h */; };
+		2C96C0E4173A18F300908D0A /* libInMobiAdNetwork-3.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C96C0DB173A18F300908D0A /* libInMobiAdNetwork-3.7.0.a */; };
+		2C96C0E5173A18F300908D0A /* libInMobiCommons-3.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C96C0DC173A18F300908D0A /* libInMobiCommons-3.7.0.a */; };
 		2CBAD41816DBAB4800C34815 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBAD3A816DBA76A00C34815 /* libGoogleAdMobAds.a */; };
 		2CBAD41916DBAB5300C34815 /* libAdOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBAD41216DBA77700C34815 /* libAdOn.a */; };
 		2CBAD42516DBAB7D00C34815 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBAD41A16DBAB7D00C34815 /* AdSupport.framework */; };
@@ -168,15 +168,15 @@
 		2C63E97217389F3F002521A7 /* AdWhirlAdapterInMobi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWhirlAdapterInMobi.m; sourceTree = "<group>"; };
 		2C63E98917389FCD002521A7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		2C63E98B17389FD7002521A7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		2C63E9941738A114002521A7 /* IMAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdDelegate.h; path = InMobi/IMAdDelegate.h; sourceTree = "<group>"; };
-		2C63E9951738A114002521A7 /* IMAdError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdError.h; path = InMobi/IMAdError.h; sourceTree = "<group>"; };
-		2C63E9961738A114002521A7 /* IMAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdInterstitial.h; path = InMobi/IMAdInterstitial.h; sourceTree = "<group>"; };
-		2C63E9971738A114002521A7 /* IMAdInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdInterstitialDelegate.h; path = InMobi/IMAdInterstitialDelegate.h; sourceTree = "<group>"; };
-		2C63E9981738A114002521A7 /* IMAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdRequest.h; path = InMobi/IMAdRequest.h; sourceTree = "<group>"; };
-		2C63E9991738A114002521A7 /* IMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdView.h; path = InMobi/IMAdView.h; sourceTree = "<group>"; };
-		2C63E99A1738A114002521A7 /* IMCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMCommonUtil.h; path = InMobi/IMCommonUtil.h; sourceTree = "<group>"; };
-		2C63E99B1738A114002521A7 /* libInMobiAdNetwork-3.6.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libInMobiAdNetwork-3.6.0.a"; path = "InMobi/libInMobiAdNetwork-3.6.0.a"; sourceTree = "<group>"; };
-		2C63E99C1738A114002521A7 /* libInMobiCommons-3.6.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libInMobiCommons-3.6.0.a"; path = "InMobi/libInMobiCommons-3.6.0.a"; sourceTree = "<group>"; };
+		2C96C0D4173A18F300908D0A /* IMAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdDelegate.h; path = InMobi/IMAdDelegate.h; sourceTree = "<group>"; };
+		2C96C0D5173A18F300908D0A /* IMAdError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdError.h; path = InMobi/IMAdError.h; sourceTree = "<group>"; };
+		2C96C0D6173A18F300908D0A /* IMAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdInterstitial.h; path = InMobi/IMAdInterstitial.h; sourceTree = "<group>"; };
+		2C96C0D7173A18F300908D0A /* IMAdInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdInterstitialDelegate.h; path = InMobi/IMAdInterstitialDelegate.h; sourceTree = "<group>"; };
+		2C96C0D8173A18F300908D0A /* IMAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdRequest.h; path = InMobi/IMAdRequest.h; sourceTree = "<group>"; };
+		2C96C0D9173A18F300908D0A /* IMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMAdView.h; path = InMobi/IMAdView.h; sourceTree = "<group>"; };
+		2C96C0DA173A18F300908D0A /* IMCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMCommonUtil.h; path = InMobi/IMCommonUtil.h; sourceTree = "<group>"; };
+		2C96C0DB173A18F300908D0A /* libInMobiAdNetwork-3.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libInMobiAdNetwork-3.7.0.a"; path = "InMobi/libInMobiAdNetwork-3.7.0.a"; sourceTree = "<group>"; };
+		2C96C0DC173A18F300908D0A /* libInMobiCommons-3.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libInMobiCommons-3.7.0.a"; path = "InMobi/libInMobiCommons-3.7.0.a"; sourceTree = "<group>"; };
 		2CBAD39F16DBA76A00C34815 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		2CBAD3A016DBA76A00C34815 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		2CBAD3A116DBA76A00C34815 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -301,8 +301,8 @@
 				2CBAD41916DBAB5300C34815 /* libAdOn.a in Frameworks */,
 				2CBAD41816DBAB4800C34815 /* libGoogleAdMobAds.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				2C63E9A41738A114002521A7 /* libInMobiAdNetwork-3.6.0.a in Frameworks */,
-				2C63E9A51738A114002521A7 /* libInMobiCommons-3.6.0.a in Frameworks */,
+				2C96C0E4173A18F300908D0A /* libInMobiAdNetwork-3.7.0.a in Frameworks */,
+				2C96C0E5173A18F300908D0A /* libInMobiCommons-3.7.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,15 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				2C63E97617389F8F002521A7 /* InMobi */,
-				2C63E9941738A114002521A7 /* IMAdDelegate.h */,
-				2C63E9951738A114002521A7 /* IMAdError.h */,
-				2C63E9961738A114002521A7 /* IMAdInterstitial.h */,
-				2C63E9971738A114002521A7 /* IMAdInterstitialDelegate.h */,
-				2C63E9981738A114002521A7 /* IMAdRequest.h */,
-				2C63E9991738A114002521A7 /* IMAdView.h */,
-				2C63E99A1738A114002521A7 /* IMCommonUtil.h */,
-				2C63E99B1738A114002521A7 /* libInMobiAdNetwork-3.6.0.a */,
-				2C63E99C1738A114002521A7 /* libInMobiCommons-3.6.0.a */,
 				2CBAD3AA16DBA77700C34815 /* AdWhirl */,
 				2CBAD3F516DBA77700C34815 /* SBJSON */,
 				2CBAD41016DBA77700C34815 /* VponSDK */,
@@ -381,6 +372,15 @@
 		2C63E97617389F8F002521A7 /* InMobi */ = {
 			isa = PBXGroup;
 			children = (
+				2C96C0D4173A18F300908D0A /* IMAdDelegate.h */,
+				2C96C0D5173A18F300908D0A /* IMAdError.h */,
+				2C96C0D6173A18F300908D0A /* IMAdInterstitial.h */,
+				2C96C0D7173A18F300908D0A /* IMAdInterstitialDelegate.h */,
+				2C96C0D8173A18F300908D0A /* IMAdRequest.h */,
+				2C96C0D9173A18F300908D0A /* IMAdView.h */,
+				2C96C0DA173A18F300908D0A /* IMCommonUtil.h */,
+				2C96C0DB173A18F300908D0A /* libInMobiAdNetwork-3.7.0.a */,
+				2C96C0DC173A18F300908D0A /* libInMobiCommons-3.7.0.a */,
 			);
 			name = InMobi;
 			sourceTree = "<group>";
@@ -599,13 +599,13 @@
 				2C00DFA216DC614B00B9DB66 /* VideohyaAdwhirlvponAdView.h in Headers */,
 				2C00DFA716DC616300B9DB66 /* VideohyaAdwhirlvponAdViewProxy.h in Headers */,
 				2C63E97317389F3F002521A7 /* AdWhirlAdapterInMobi.h in Headers */,
-				2C63E99D1738A114002521A7 /* IMAdDelegate.h in Headers */,
-				2C63E99E1738A114002521A7 /* IMAdError.h in Headers */,
-				2C63E99F1738A114002521A7 /* IMAdInterstitial.h in Headers */,
-				2C63E9A01738A114002521A7 /* IMAdInterstitialDelegate.h in Headers */,
-				2C63E9A11738A114002521A7 /* IMAdRequest.h in Headers */,
-				2C63E9A21738A114002521A7 /* IMAdView.h in Headers */,
-				2C63E9A31738A114002521A7 /* IMCommonUtil.h in Headers */,
+				2C96C0DD173A18F300908D0A /* IMAdDelegate.h in Headers */,
+				2C96C0DE173A18F300908D0A /* IMAdError.h in Headers */,
+				2C96C0DF173A18F300908D0A /* IMAdInterstitial.h in Headers */,
+				2C96C0E0173A18F300908D0A /* IMAdInterstitialDelegate.h in Headers */,
+				2C96C0E1173A18F300908D0A /* IMAdRequest.h in Headers */,
+				2C96C0E2173A18F300908D0A /* IMAdView.h in Headers */,
+				2C96C0E3173A18F300908D0A /* IMCommonUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

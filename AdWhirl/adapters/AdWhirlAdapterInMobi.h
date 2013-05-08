@@ -25,7 +25,7 @@
 @class IMAdView;
 
 @interface AdWhirlAdapterInMobi : AdWhirlAdNetworkAdapter <IMAdDelegate> {
-
+    
 }
 
 + (AdWhirlAdNetworkType)networkType;

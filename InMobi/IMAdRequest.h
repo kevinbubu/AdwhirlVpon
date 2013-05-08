@@ -2,7 +2,7 @@
 //  IMAdRequest.h
 //  InMobi AdNetwork SDK
 //
-//  Copyright 2012 InMobi Technology Services Ltd. All rights reserved.
+//  Copyright 2013 InMobi Technology Services Ltd. All rights reserved.
 //
 
 #import <CoreGraphics/CoreGraphics.h>
@@ -12,36 +12,36 @@
  * User Gender.
  */
 typedef enum {
-	kIMGenderNone,
-	kIMGenderMale,
-	kIMGenderFemale,
+    kIMGenderNone,
+    kIMGenderMale,
+    kIMGenderFemale,
 } IMGenderType;
 
 /**
  * User Ethnicity.
  */
 typedef enum {
-	kIMEthnicityNone,
-	kIMEthnicityMixed,
-	kIMEthnicityAsian,
-	kIMEthnicityBlack,
-	kIMEthnicityHispanic,
-	kIMEthnicityNativeAmerican,
-	kIMEthnicityWhite,
-	kIMEthnicityOther,
+    kIMEthnicityNone,
+    kIMEthnicityMixed,
+    kIMEthnicityAsian,
+    kIMEthnicityBlack,
+    kIMEthnicityHispanic,
+    kIMEthnicityNativeAmerican,
+    kIMEthnicityWhite,
+    kIMEthnicityOther,
 } IMEthnicityType;
 
 /**
  * User Education.
  */
 typedef enum {
-	kIMEducationNone,
-	kIMEducationHighSchool,
-	kIMEducationInCollege,
-	kIMEducationBachelorsDegree,
-	kIMEducationMastersDegree,
-	kIMEducationDoctoralDegree,
-	kIMEducationOther,
+    kIMEducationNone,
+    kIMEducationHighSchool,
+    kIMEducationInCollege,
+    kIMEducationBachelorsDegree,
+    kIMEducationMastersDegree,
+    kIMEducationDoctoralDegree,
+    kIMEducationOther,
 } IMEducationType;
 
 /**
@@ -70,12 +70,6 @@ typedef enum {
  * Returns an autoreleased IMAdRequest instance.
  */
 + (IMAdRequest *)request;
-
-#pragma mark Testing
-/**
- * Setting testMode to YES will return a test ad for this request.
- */
-@property (nonatomic, assign) BOOL testMode;
 
 #pragma mark Optional Parameters for targeted advertising during an Ad Request
 /**
@@ -120,10 +114,6 @@ typedef enum {
  * Example: @"offers sale shopping"
  */
 @property (nonatomic, copy) NSString *keywords;
-/**
- * Search string provided by the user. Example: @"Hotel Bangalore India"
- */
-@property (nonatomic, copy) NSString *searchString;
 /**
  * Use contextually relevant strings to deliver more relevant ads.
  * Example: @"cars bikes racing"
@@ -175,5 +165,11 @@ typedef enum {
  * @return id value.
  */
 - (NSString *)getIDType:(IMIDType)idType;
+
+#pragma mark --Deprecated methods
+/**
+ * @warning This property is deprecated.Please see http://developer.inmobi.com for additional details.
+ */
+@property (nonatomic, assign) BOOL testMode;
 
 @end

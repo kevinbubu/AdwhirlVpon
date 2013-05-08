@@ -2,7 +2,7 @@
 //  IMAdView.h
 //  InMobi AdNetwork SDK
 //
-//  Copyright 2012 InMobi Technology Services Ltd. All rights reserved.
+//  Copyright 2013 InMobi Technology Services Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -10,7 +10,19 @@
 #import "IMAdRequest.h"
 #import "IMAdError.h"
 
-#define REFRESH_INTERVAL_OFF     -1
+#pragma mark Refresh Intervals.
+
+// To switch off the adview refresh, use:
+// adView.refreshInterval = REFRESH_INTERVAL_OFF;
+#define REFRESH_INTERVAL_OFF  (-1)
+
+// To use the default refresh interval for sdk, use:
+// adView.refreshInterval = REFRESH_INTERVAL_DEFAULT_VALUE;
+#define REFRESH_INTERVAL_DEFAULT_VALUE  (0)
+
+// To use the minimum refresh interval supported by sdk, use:
+// adView.refreshInterval = REFRESH_INTERVAL_MIN_SUPPORTED_VALUE;
+#define REFRESH_INTERVAL_MIN_SUPPORTED_VALUE  (INT_MIN)
 
 #pragma mark Ad Units
 /**
@@ -57,8 +69,7 @@
  Below is the sample example to use an IMAdView:
     IMAdView *adView = [[IMAdView alloc] initWithFrame:CGRectMake(0,0,320,50)
                                                imAppId:@"YOUR_APP_ID"
-                                              imAdSize:IM_UNIT_320x50
-                                    rootViewController:self];
+                                              imAdSize:IM_UNIT_320x50];
     adView.delegate = self;
     [self.view addSubview:adView];
     [adView release];
@@ -80,6 +91,7 @@
  UIViewController, make sure you set its delegate to nil and remove it from its
  superview to prevent any chance of your application crashing.
     - (void)dealloc {
+        adView.delegate = nil;
         [adView removeFromSuperview];
         [adView release]; adView = nil;
         [super dealloc];
@@ -111,13 +123,6 @@
  * be obtained in the Publisher section by logging in to InMobi's website.
  */
 @property (nonatomic, assign) long long imSlotId;
-
-/**
- * Required reference to the current root view controller.
- * For example, the root view controller in a navigation-based application
- * would be the UINavigationController.
- */
-@property (nonatomic, assign) UIViewController *rootViewController;
 
 /**
  * The ad size enum value to request for the specific banner size.
@@ -161,13 +166,10 @@
  *              ad size requested.
  * @param appId Publisher's App ID obtained from InMobi website.
  * @param adSize Ad size to request the specific banner size.
- * @param viewController RootViewController for this view.
  */
 - (id)initWithFrame:(CGRect)frame
             imAppId:(NSString *)appId
-           imAdSize:(int)adSize
-    rootViewController:(UIViewController *)viewController;
-
+           imAdSize:(int)adSize;
 /**
  * Use this constructor to obtain an instance of IMAdView.
  *
@@ -176,14 +178,11 @@
  * @param appId Publisher's App ID obtained from InMobi website.
  * @param slotId Slot Id to uniquely identify an ad slot in an app.
  * @param adSize Ad size to request the specific banner size.
- * @param viewController RootViewController for this view.
  */
 - (id)initWithFrame:(CGRect)frame
             imAppId:(NSString *)appId
-           imSlotId:(long long)slotId
            imAdSize:(int)adSize
- rootViewController:(UIViewController *)viewController;
-
+           imSlotId:(long long)slotId;
 /**
  * Call this method to refresh this view.
  * This method will call loadIMAdRequest: with the imAdRequest object specified
@@ -201,36 +200,6 @@
  * Call this method to stop loading the current ad request.
  */
 - (void)stopLoading;
-
-/**
- * Use this method to specify the text color for the ad. The color value must
- * be of the format @"#RRGGBB". This method will be valid for a text ad only.
- * For other ads, the value will be ignored.
- *
- * @param color The RGB value of the color.
- */
-- (void)setAdTextColor:(NSString *)color;
-
-/**
- * Use this method to specify the background color for the ad. The color value
- * must be of the format @"#RRGGBB". This method will be valid for a text ad
- * only. For other ads, the value will be ignored.
- *
- * @param bgcolor The RGB value of the color.
- */
-- (void)setAdBackgroundColor:(NSString *)bgcolor;
-
-/**
- * Use this method to specify a background color with a linear gradient. The
- * color value must be of the format @"#RRGGBB". This method will be valid for
- * a text ad only. For other ads, the value will be ignored.
- *
- * @param topcolor The top RGB value for the gradient.
- * @param bottomcolor The bottom RGB value for the gradient.
- */
-- (void)setAdBackgroundGradientWithTopColor:(NSString *)topcolor
-                                bottomColor:(NSString *)bottomcolor;
-
 /**
  * Use this method to assign a custom reference tag at the time of making an
  * Ad Request to the InMobi Ad Server.
@@ -241,19 +210,44 @@
  */
 - (void)setRefTag:(NSString *)value forKey:(NSString *)key;
 
+#pragma mark -- Deprecated methods
 /**
- * This is useful if your application supports more than one orientation.
- * Default value is YES. This might be NO only when the adview is expanding to
- * a modal screen that does not support the orientation.
- * A typical implementation is as follows:
- *   - (BOOL)shouldAutorotateToInterfaceOrientation:
- *                           (UIInterfaceOrientation)interfaceOrientation {
- *       return UIInterfaceOrientationIsPortrait(interfaceOrientation) &&
- *           [imAdView shouldRotateToInterfaceOrientation:interfaceOrientation];
- *   }
+ * @note This property is deprecated.
+ */
+@property (nonatomic, assign) UIViewController *rootViewController;
+
+/**
+ * Use this constructor to obtain an instance of IMAdView.
  *
- * @param orientation The orientation of the application’s user interface
- *                    after the rotation.
+ * @param frame CGRect bounds for this view, typically according to the
+ *              ad size requested.
+ * @param appId Publisher's App ID obtained from InMobi website.
+ * @param adSize Ad size to request the specific banner size.
+ * @param viewController RootViewController for this view.
+ * @note This method is deprecated, please see above for the list of available constructors.
+ */
+- (id)initWithFrame:(CGRect)frame
+            imAppId:(NSString *)appId
+           imAdSize:(int)adSize
+ rootViewController:(UIViewController *)viewController;
+
+/**
+ * @note This method is deprecated, calling this method will have no effect.
+ */
+- (void)setAdTextColor:(NSString *)color;
+
+/**
+ * @note This method is deprecated, calling this method will have no effect.
+ */
+- (void)setAdBackgroundColor:(NSString *)bgcolor;
+
+/**
+ * @note This method is deprecated, calling this method will have no effect.
+ */
+- (void)setAdBackgroundGradientWithTopColor:(NSString *)topcolor
+                                bottomColor:(NSString *)bottomcolor;
+/**
+ * @note This method is deprecated, calling this method will always return TRUE;
  */
 - (BOOL)shouldRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation;
 

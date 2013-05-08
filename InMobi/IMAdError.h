@@ -2,15 +2,11 @@
 //  IMAdError.h
 //  InMobi AdNetwork SDK
 //
-//  Copyright 2012 InMobi Technology Services Ltd. All rights reserved.
+//  Copyright 2013 InMobi Technology Services Ltd. All rights reserved.
 //
 
 #import "IMCommonUtil.h"
 #import <Foundation/Foundation.h>
-
-#ifndef ___INMOBI_COMMONS_VERSION_3_6_0___
-#error @"libIMCommons version mismatch, Please upgrade to the latest."
-#endif
 
 /**
  * IMAdErrorCode enum defines the NSError codes for InMobi ad fetch/click
@@ -54,7 +50,7 @@ typedef enum {
      * The ad server experienced a failure while processing the request.
      */
     kIMADInternalError,
-
+    
 } IMAdErrorCode;
 
 /**

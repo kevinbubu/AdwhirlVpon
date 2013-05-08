@@ -2,7 +2,7 @@
 //  IMAdInterstitial.h
 //  InMobi AdNetwork SDK
 //
-//  Copyright 2012 InMobi Technology Services Ltd. All rights reserved.
+//  Copyright 2013 InMobi Technology Services Ltd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -35,6 +35,10 @@ typedef enum {
 
 } IMAdInterstitialState;
 
+typedef enum  {
+    IMAdModeNetwork,
+    IMAdModeAppGallery
+} IMAdMode;
 /**
  IMAdInterstitial is the class that displays an Interstitial Ad.
  Interstitials are full screen advertisements that are shown at natural
@@ -44,13 +48,16 @@ typedef enum {
  when it is actually needed, so that it can preload its content and become
  ready to present, and when the time comes, it can be immediately presented to
  the user with a smooth experience.
- 
- Interstitials are shown sparingly; Expect low to no fill.
  */
+
 @interface IMAdInterstitial : NSObject {
 
 }
-
+/**
+ * @param appId See property imAppId for details.
+ * @param slotId See property imSlotId for details.
+ */
+- (id)initWithAppId:(NSString *)appId slotId:(long long)slotId;
 /**
  Delegate object that receives state change notifications from this
  interstitial object. Typically, this is a UIViewController instance.
@@ -77,6 +84,7 @@ typedef enum {
  */
 @property (nonatomic, assign) long long imSlotId;
 
+@property(nonatomic,assign) IMAdMode adMode;
 #pragma mark Ad Request methods
 
 /**
@@ -110,9 +118,14 @@ typedef enum {
  * kIMAdInterstitialStateReady and/or the delegate's interstitialDidReceiveAd:
  * has been received. After the interstitial has been dismissed by the user,
  * the delegate's interstitialDidDismissScreen: will be called.
- *
- * @param rootViewController The current view controller at the time this
- *                           method is called.
+ * @param _animated Show the interstitial by using an animation. This is similar to 
+ * presenting a Modal-View-Controller like animation, from the bottom.
+ */
+- (void)presentInterstitialAnimated:(BOOL)_animated;
+
+#pragma mark Deprecated -- methods
+/**
+ * @note This method is deprecated. See above for the list of available methods to present this interstitial.
  */
 - (void)presentFromRootViewController:(UIViewController *)rootViewController
                              animated:(BOOL)_animated;

@@ -31,129 +31,123 @@
 @implementation AdWhirlAdapterInMobi
 
 + (AdWhirlAdNetworkType)networkType {
-  return AdWhirlAdNetworkTypeInMobi;
+    return AdWhirlAdNetworkTypeInMobi;
 }
 
 + (void)load {
-  [[AdWhirlAdNetworkRegistry sharedRegistry] registerClass:self];
+    [[AdWhirlAdNetworkRegistry sharedRegistry] registerClass:self];
 }
 
 - (void)getAd {
     
-  IMAdView *inMobiView = [[IMAdView alloc]
-                            initWithFrame:kAdWhirlViewDefaultFrame
-                            imAppId:[self siteId]
-                            imAdSize:IM_UNIT_320x50
-                            rootViewController:[self rootViewControllerForAd]];
-  [inMobiView autorelease];
-  inMobiView.refreshInterval = REFRESH_INTERVAL_OFF;
-  inMobiView.delegate = self;
-  self.adNetworkView = inMobiView;
-  IMAdRequest *request = [IMAdRequest request];
-
-  if ([self testMode]) {
-    request.testMode = true;
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(postalCode)]) {
-    request.postalCode = [adWhirlDelegate postalCode];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(areaCode)]) {
-    request.areaCode = [adWhirlDelegate areaCode];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(dateOfBirth)]) {
-      request.dateOfBirth = [adWhirlDelegate dateOfBirth];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(gender)]) {
-    if ([adWhirlDelegate gender] == @"m") {
-      request.gender = kIMGenderMale;
-    } else if ([adWhirlDelegate gender] == @"f") {
-      request.gender = kIMGenderFemale;
-    } else {
-      request.gender = kIMGenderNone;
+    IMAdView *inMobiView = [[[IMAdView alloc] initWithFrame:kAdWhirlViewDefaultFrame imAppId:[self siteId] imAdSize:IM_UNIT_320x50] autorelease];
+    if ([inMobiView respondsToSelector:@selector(rootViewController)]) {
+        inMobiView.rootViewController = [self rootViewControllerForAd];
     }
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(keywords)]) {
-    request.keywords = [adWhirlDelegate keywords];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(searchString)]) {
-    request.searchString = [adWhirlDelegate searchString];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(incomeLevel)]) {
-    request.income = [adWhirlDelegate incomeLevel];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(inMobiEducation)]) {
-    request.education = [adWhirlDelegate inMobiEducation];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(inMobiEthnicity)]) {
-    request.ethnicity = [adWhirlDelegate inMobiEthnicity];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(dateOfBirth)]) {
-    request.age = [self helperCalculateAge];
-  }
-  if ([adWhirlDelegate respondsToSelector:@selector(inMobiInterests)]) {
-    request.interests = [adWhirlDelegate inMobiInterests];
-  }
+    inMobiView.refreshInterval = REFRESH_INTERVAL_OFF;
+    inMobiView.delegate = self;
+    self.adNetworkView = inMobiView;
+    IMAdRequest *request = [IMAdRequest request];
+    if ([self testMode]) {
+        NSLog(@"[InMobi] Add your PUBLISHER DEVICE ID to the InMobi portal to recieve test ads.");
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(postalCode)]) {
+        request.postalCode = [adWhirlDelegate postalCode];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(areaCode)]) {
+        request.areaCode = [adWhirlDelegate areaCode];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(dateOfBirth)]) {
+        request.dateOfBirth = [adWhirlDelegate dateOfBirth];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(gender)]) {
+        if ([adWhirlDelegate gender] == @"m") {
+            request.gender = kIMGenderMale;
+        } else if ([adWhirlDelegate gender] == @"f") {
+            request.gender = kIMGenderFemale;
+        } else {
+            request.gender = kIMGenderNone;
+        }
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(keywords)]) {
+        request.keywords = [adWhirlDelegate keywords];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(incomeLevel)]) {
+        request.income = [adWhirlDelegate incomeLevel];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(inMobiEducation)]) {
+        request.education = [adWhirlDelegate inMobiEducation];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(inMobiEthnicity)]) {
+        request.ethnicity = [adWhirlDelegate inMobiEthnicity];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(dateOfBirth)]) {
+        request.age = [self helperCalculateAge];
+    }
+    if ([adWhirlDelegate respondsToSelector:@selector(inMobiInterests)]) {
+        request.interests = [adWhirlDelegate inMobiInterests];
+    }
     NSMutableDictionary *paramDict = [NSMutableDictionary dictionary];
-  if ([adWhirlDelegate respondsToSelector:@selector(inMobiParamsDictionary)]) {
-      paramDict = [NSMutableDictionary dictionaryWithDictionary:[adWhirlDelegate inMobiParamsDictionary]];
-  }
+    if ([adWhirlDelegate respondsToSelector:@selector(inMobiParamsDictionary)]) {
+        paramDict = [NSMutableDictionary dictionaryWithDictionary:[adWhirlDelegate inMobiParamsDictionary]];
+    }
     [paramDict setObject:@"c_adwhirl" forKey:@"tp"];
     request.paramsDictionary = [NSDictionary dictionaryWithDictionary:paramDict];
     
-  if ([adWhirlDelegate respondsToSelector:@selector(locationInfo)]) {
-    [request setLocationWithLatitude:[adWhirlDelegate locationInfo].coordinate.latitude longitude:[adWhirlDelegate locationInfo].coordinate.longitude accuracy:[adWhirlDelegate locationInfo].horizontalAccuracy];
-  }
-
-  [inMobiView loadIMAdRequest:request];
+    if ([adWhirlDelegate respondsToSelector:@selector(locationInfo)]) {
+        [request setLocationWithLatitude:[adWhirlDelegate locationInfo].coordinate.latitude longitude:[adWhirlDelegate locationInfo].coordinate.longitude accuracy:[adWhirlDelegate locationInfo].horizontalAccuracy];
+    }
+    
+    [inMobiView loadIMAdRequest:request];
 }
 
 - (void)stopBeingDelegate {
-  IMAdView *inMobiView = (IMAdView *)self.adNetworkView;
-  if (inMobiView != nil) {
-    [inMobiView setDelegate:nil];
-  }
+    IMAdView *inMobiView = (IMAdView *)self.adNetworkView;
+    if (inMobiView != nil) {
+        [inMobiView setDelegate:nil];
+    }
 }
 
 - (void)dealloc {
-  [super dealloc];
+    [super dealloc];
 }
 
 #pragma mark IMAdView helper methods
 
 - (NSString *)siteId {
-  if ([adWhirlDelegate respondsToSelector:@selector(inMobiAppId)]) {
-    return [adWhirlDelegate inMobiAppID];
-  }
-  return networkConfig.pubId;
+    if ([adWhirlDelegate respondsToSelector:@selector(inMobiAppId)]) {
+        return [adWhirlDelegate inMobiAppID];
+    }
+    return networkConfig.pubId;
 }
 
 - (UIViewController *)rootViewControllerForAd {
-  return [adWhirlDelegate viewControllerForPresentingModalView];
+    return [adWhirlDelegate viewControllerForPresentingModalView];
 }
 
 - (BOOL)testMode {
-  if ([adWhirlDelegate respondsToSelector:@selector(adWhirlTestMode)])
-    return [adWhirlDelegate adWhirlTestMode];
-  return NO;
+    if ([adWhirlDelegate respondsToSelector:@selector(adWhirlTestMode)])
+        return [adWhirlDelegate adWhirlTestMode];
+    return NO;
 }
 
 #pragma mark IMAdDelegate methods
 
 - (void)adViewDidFinishRequest:(IMAdView *)adView {
-  [adWhirlView adapter:self didReceiveAdView:adView];
+    [adWhirlView adapter:self didReceiveAdView:adView];
 }
 
 - (void)adView:(IMAdView *)view didFailRequestWithError:(IMAdError *)error {
-  NSLog(@"Error %@", [error localizedDescription]);
-  [adWhirlView adapter:self didFailAd:nil];
+    NSLog(@"Error %@", [error localizedDescription]);
+    [adWhirlView adapter:self didFailAd:nil];
 }
 
 - (void)adViewWillPresentScreen:(IMAdView *)adView {
-  [self helperNotifyDelegateOfFullScreenModal];
+    [self helperNotifyDelegateOfFullScreenModal];
 }
 
 - (void)adViewDidDismissScreen:(IMAdView *)adView {
-  [self helperNotifyDelegateOfFullScreenModalDismissal];
+    [self helperNotifyDelegateOfFullScreenModalDismissal];
 }
 
 - (void)adViewWillLeaveApplication:(IMAdView *)adView {
