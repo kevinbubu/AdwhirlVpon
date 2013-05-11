@@ -32,7 +32,7 @@
 		2C00DFA816DC616300B9DB66 /* VideohyaAdwhirlvponAdViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C00DFA616DC616300B9DB66 /* VideohyaAdwhirlvponAdViewProxy.m */; };
 		2C63E97317389F3F002521A7 /* AdWhirlAdapterInMobi.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C63E97117389F3F002521A7 /* AdWhirlAdapterInMobi.h */; };
 		2C63E97417389F3F002521A7 /* AdWhirlAdapterInMobi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E97217389F3F002521A7 /* AdWhirlAdapterInMobi.m */; };
-		2C63E98A17389FCD002521A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E98917389FCD002521A7 /* PassKit.framework */; };
+		2C63E98A17389FCD002521A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E98917389FCD002521A7 /* PassKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2C63E98C17389FD7002521A7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C63E98B17389FD7002521A7 /* AVFoundation.framework */; };
 		2C96C0DD173A18F300908D0A /* IMAdDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D4173A18F300908D0A /* IMAdDelegate.h */; };
 		2C96C0DE173A18F300908D0A /* IMAdError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96C0D5173A18F300908D0A /* IMAdError.h */; };

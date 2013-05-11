@@ -1,5 +1,5 @@
 # Adwhirl Vpon/Admob/InMobi Titanium Module
-v1.2
+v1.2.1
 
 ============================================
 描述
@@ -19,8 +19,9 @@ v1.2
 ============================================
 更新內容
 ============================================
-	1. Admob SDK 升級至 6.4.1
-	2. InMobi SDK 升級至 3.7.0
+	1. iOS 4 & 5 閃退問題修正 (因Admob 6.4.1使用PassKit.framework，已將此framework設為optional)
+	2. Admob SDK 升級至 6.4.1
+	3. InMobi SDK 升級至 3.7.0
 	
 ============================================
 安裝方法
@@ -48,7 +49,7 @@ Step 1. 註冊相關帳號與id
 Step 2. 模組安裝
 ======================
 	
-	1. 先把videohya.adwhirlvpon-iphone-1.2.zip解壓縮，
+	1. 先把videohya.adwhirlvpon-iphone-1.2.1.zip解壓縮，
 	
 	2. 把videohya.adwhirlvpon資料夾複製到/Users/<USER NAME>/Library/Application Support/Titanium/modules/iphone中即可
 

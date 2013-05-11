@@ -26,4 +26,6 @@
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 // 
 
-OTHER_LDFLAGS=$(inherited) -framework Foundation -framework UIKit -framework SystemConfiguration -framework MessageUI -framework Security -framework MediaPlayer -framework CoreLocation -framework CoreGraphics -framework CoreTelephony -framework StoreKit -framework AudioToolbox -framework AdSupport -framework PassKit -framework AVFoundation
+
+OTHER_LDFLAGS=$(inherited) -framework Foundation -framework UIKit -framework SystemConfiguration -framework MessageUI -framework Security -framework MediaPlayer -framework CoreLocation -framework CoreGraphics -framework CoreTelephony -framework StoreKit -framework AudioToolbox -framework AdSupport -framework AVFoundation -weak_framework PassKit
+
